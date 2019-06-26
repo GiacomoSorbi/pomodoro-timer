@@ -4,12 +4,13 @@ import { Button, Timer } from './components';
 
 function App() {
   const [timerOn, setTimerOn] = useState();
-  const useTimer = () => setTimerOn(!timerOn);
+  const [time, setTime] = useState(0);
+  const toggleTimer = () => setTimerOn(!timerOn);
 
   return (
     <div className="app">
-      <Timer active={timerOn} />
-      <Button onClick={useTimer}>{timerOn ? 'Stop' : 'Start'}</Button>
+      <Timer active={timerOn} time={time} setTime={setTime} />
+      <Button onClick={toggleTimer}>{timerOn ? 'Stop' : 'Start'}</Button>
     </div>
   );
 }
