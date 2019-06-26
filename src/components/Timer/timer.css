@@ -1,0 +1,19 @@
+@font-face {
+  font-family: calculator;
+  src: url('../../assets/calculator.ttf');
+}
+
+.timer-container {
+  font-family: calculator;
+  text-align: center;
+  font-size: calc(40px + 4vmin);
+  width: calc(320px + 32vmin);
+  color: gold;
+  border: 3vmin solid gold;
+  box-shadow: 0.75vmin 0.75vmin 0.75vmin yellow;
+  text-shadow: 0.75vmin 0.75vmin 0.75vmin yellow;
+  font-weight: bold;
+  border-radius: 2vmin;
+  padding: 1vmin;
+  cursor: pointer;
+}
