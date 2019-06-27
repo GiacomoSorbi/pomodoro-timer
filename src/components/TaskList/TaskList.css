@@ -1,0 +1,35 @@
+.task-list-container {
+  margin: 0 auto;
+  padding: 1vmin;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 800px;
+  min-height: 100vh;
+  background-color: red;
+}
+
+.tasks-container {
+  padding: 1vmin;
+  margin: 1vmin;
+  border: 1vmin green solid;
+  border-radius: 1vmin;
+}
+
+.options {
+  margin: 1vmin;
+  display: flex;
+  justify-content: space-between;
+}
+
+.options .btn {
+  width: 15%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .task-list-container {
+    margin: 1vmin auto;
+    border-radius: 1vmin;
+    box-shadow: 0.75vmin 0.75vmin 0.75vmin lightcoral;
+  }
+}

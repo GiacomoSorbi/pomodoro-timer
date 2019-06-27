@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { formatTimeWithMode } from '../../utils';
 import './timer.css';
+import Overlay from '../Overlay';
 
 let timer;
 
-const Timer = props => {
+const Timer = ({ active, onClick, setTime, time }) => {
   const [timerMode, setTimerMode] = useState();
   const toggleTimerMode = event => {
     event.stopPropagation();
@@ -12,15 +13,16 @@ const Timer = props => {
   };
 
   useEffect(() => {
-    if (props.active)
-      timer = setTimeout(() => props.setTime(props.time + 1), 1000);
+    if (active) timer = setTimeout(() => setTime(time + 1), 1000);
     else clearInterval(timer);
-  }, [props.time, props.active]);
+  }, [time, active, setTime]);
 
   return (
-    <div className="timer-container" onClick={toggleTimerMode}>
-      {formatTimeWithMode(props.time, 900, timerMode)}
-    </div>
+    <Overlay open={active} onClick={onClick}>
+      <div className="timer-container" onClick={toggleTimerMode}>
+        {formatTimeWithMode(time, 900, timerMode)}
+      </div>
+    </Overlay>
   );
 };
 

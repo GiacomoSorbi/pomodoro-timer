@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './app.css';
-import { Button, Timer } from './components';
-import Overlay from './components/Overlay';
+import { TaskList, Timer } from './components';
 
 function App() {
   const [timerOn, setTimerOn] = useState();
@@ -10,12 +9,13 @@ function App() {
 
   return (
     <div className="app">
-      <Overlay onClick={toggleTimer} open={timerOn}>
-        <Timer active={timerOn} time={time} setTime={setTime} />
-      </Overlay>
-      <Button className="btn-default" onClick={toggleTimer}>
-        {timerOn ? 'Stop' : 'Start'} Timer
-      </Button>
+      <Timer
+        onClick={toggleTimer}
+        active={timerOn}
+        time={time}
+        setTime={setTime}
+      />
+      <TaskList timerOn={timerOn} toggleTimer={toggleTimer} />
     </div>
   );
 }
